@@ -36,7 +36,7 @@ from sklearn.model_selection import train_test_split
 # Carregando o dataset
 data = pd.read_csv('dataset.csv')
 
-# Separando variáveis numéricas e categóricas
+# Separando variáveis numéricas e categóricas 
 
 # Normalizando as variáveis numércas
 continuous_features = data[ ['GRE Score','TOEFL Score','University Rating','SOP','LOR','CGPA'] ].values / 100 
@@ -74,7 +74,7 @@ def h ( X , weights , bias ):
     return tf.tensordot( X , weights , axes=1 ) + bias
 
 # Inicializando os hiperparâmetros
-num_epochs = 10
+num_epochs = 1000
 num_samples = X_treino.shape[0]
 batch_size = 10
 learning_rate = 0.001
@@ -95,7 +95,7 @@ iterator = dataset.__iter__()
 
 # Variáveis para o TensorBoard (substitua dmpm pelo seu usuário ao executar no Titan)
 current_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-train_log_dir = '/tmp/dmpm/logregmodel/' + current_time + '/train'
+train_log_dir = '/tmp/IA/logregmodel/' + current_time + '/train'
 train_summary_writer = tf.summary.create_file_writer(train_log_dir)
 
 
@@ -153,7 +153,7 @@ tf.print(Y_teste[0] * 100)
 print('\n')
 
 
-# Para inicializar o TensorBoard, execute esse comando no terminal: tensorboard --logdir=/tmp/dmpm/logregmodel
+# Para inicializar o TensorBoard, execute esse comando no terminal: tensorboard --logdir=/tmp/IA/logregmodel
 # (substitua dmpm pelo seu usuário ao executar no Titan)
 
 

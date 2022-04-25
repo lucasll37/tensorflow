@@ -71,7 +71,7 @@ for i in range(100):
 
 
 # Inicializando o Tensorboard
-# tensorboard --logdir = /tmp/testetb
+# tensorboard --logdir_spec /tmp/testetb
 
 
 
